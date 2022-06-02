@@ -1,4 +1,4 @@
-package com.example.urpasswords
+package com.urpasswords.urpasswords
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

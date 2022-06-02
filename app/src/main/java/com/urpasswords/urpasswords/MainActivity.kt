@@ -1,4 +1,4 @@
-package com.example.urpasswords
+package com.urpasswords.urpasswords
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

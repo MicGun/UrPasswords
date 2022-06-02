@@ -1,4 +1,4 @@
-package com.example.urpasswords
+package com.urpasswords.urpasswords
 
 import org.junit.Test
 
