@@ -6,11 +6,12 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Account(
-    val name: String,
+    val accountName: String,
     val userAccount: String,
-    val userPasswords: String,
+    val userPassword: String,
+    val categoryName: String,
     val createAt: Long,
     val image: Bitmap,
     val key: String,
-    @PrimaryKey val id: Int? = null
+    @PrimaryKey val accountId: Int? = null
 )
