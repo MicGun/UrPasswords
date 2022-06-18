@@ -25,15 +25,33 @@ interface UrPasswordsDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAccountTagCrossRef(accountTagCrossRef: AccountTagCrossRef)
 
+    @Delete
+    suspend fun deleteCategory(category: Category)
+
+    @Delete
+    suspend fun deleteAccount(account: Account)
+
+    @Delete
+    suspend fun deleteTag(tag: Tag)
+
+    @Delete
+    suspend fun deleteAccountTagCrossRef(accountTagCrossRef: AccountTagCrossRef)
+
     @Query("SELECT * FROM account")
     fun getAccounts(): Flow<List<Account>>
 
     @Query("SELECT * FROM account WHERE accountId = :accountId")
     fun getAccountById(accountId: Int): Account?
 
+    @Query("SELECT * FROM tag")
+    fun getTags(): Flow<List<Tag>>
+
+    @Query("SELECT * FROM category")
+    fun getCategories(): Flow<List<Category>>
+
     @Transaction
     @Query("SELECT * FROM category WHERE categoryName = :categoryName")
-    suspend fun getCategoryWithAccounts(categoryName: String): List<CategoryWithAccounts>
+    suspend fun getAccountsWithCategory(categoryName: String): List<CategoryWithAccounts>
 
     @Transaction
     @Query("SELECT * FROM tag WHERE tagName = :tagName")
@@ -41,5 +59,5 @@ interface UrPasswordsDao {
 
     @Transaction
     @Query("SELECT * FROM account WHERE accountId = :accountId")
-    suspend fun getTagsWithAccount(accountId: String): List<AccountWithTags>
+    suspend fun getTagsWithAccount(accountId: Int): List<AccountWithTags>
 }
