@@ -11,6 +11,7 @@ data class Account(
     val userPassword: String,
     val categoryName: String,
     val createAt: Long,
+    val modifyAt: Long,
     val image: Bitmap,
     val key: String,
     @PrimaryKey val accountId: Int? = null

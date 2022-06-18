@@ -19,4 +19,8 @@ import com.urpasswords.urpasswords.feature_passwords.domain.model.relations.Acco
 abstract class UrPasswordsDatabase : RoomDatabase() {
 
     abstract val dao: UrPasswordsDao
+
+    companion object {
+        const val DATABASE_NAME = "ur_passwords_db"
+    }
 }
